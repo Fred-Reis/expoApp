@@ -20,7 +20,9 @@ export default function App() {
     Poppins_700Bold
   })
 
-  if(!fontsLoaded) () => <AppLoading/>
+  if(!fontsLoaded) {
+    return(<AppLoading/>)
+  }
 
   return (
     <ThemeProvider theme={theme}>

@@ -2,7 +2,8 @@
   "main": "index.js",
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "listIosDevices": "xcrun simctl list devices",
+    "ios": "react-native run-ios --udid 6BC691E5-87B1-4C8F-A17C-ADD89B9E0C61",
     "web": "expo start --web",
     "start": "react-native start"
   },
@@ -19,7 +20,9 @@
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
     "react-native-gesture-handler": "~1.10.2",
+    "react-native-iphone-x-helper": "^1.3.1",
     "react-native-reanimated": "~2.2.0",
+    "react-native-responsive-fontsize": "^0.5.1",
     "react-native-screens": "~3.4.0",
     "react-native-unimodules": "~0.14.5",
     "react-native-web": "~0.13.12",
