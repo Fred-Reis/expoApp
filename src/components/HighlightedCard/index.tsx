@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 
 import { 
   Container,
@@ -11,16 +10,37 @@ import {
   LastTransaction
 } from './styles';
 
-export const HighlightedCard = () => {
+interface CardProps {
+  type: 'up' | 'down' | 'total';
+  title: string;
+  amount: string;
+  lastTransaction: string;
+}
+
+const icon = {
+  up: 'arrow-up-circle',
+  down: 'arrow-down-circle',
+  total: 'dollar-sign'
+}
+
+export const HighlightedCard = ({type, title, amount, lastTransaction}: CardProps) => {
   return (
-    <Container>
+    <Container type={type}>
       <TopHalf>
-        <Title>Entradas</Title>
-        <Icon name="arrow-up-circle"/>
+        <Title type={type}>
+          {title}
+        </Title>
+        <Icon 
+          name={icon[type]}
+          type={type}/>
       </TopHalf>
       <BottomHalf>
-        <Amount>U$$ 12,000.00 </Amount>
-        <LastTransaction>Last income in July 13th</LastTransaction>
+        <Amount type={type}>
+          {amount}
+        </Amount>
+        <LastTransaction type={type}>
+          {lastTransaction}
+        </LastTransaction>
       </BottomHalf>
     </Container>
   );
