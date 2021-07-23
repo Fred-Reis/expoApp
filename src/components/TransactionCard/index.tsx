@@ -8,12 +8,12 @@ import {
   Category,
   Icon,
   CategoryName,
-  Date
+  Date,
 } from './styles';
 
 interface Category {
   name: string;
-  icon:string
+  icon: string;
 }
 
 export interface TransactionCardProps {
@@ -21,19 +21,17 @@ export interface TransactionCardProps {
   amount: string;
   category: Category;
   date: string;
-  type: 'income' | 'outcome'
+  type: 'income' | 'outcome';
 }
 
 interface CardProps {
-  data: TransactionCardProps
+  data: TransactionCardProps;
 }
 
-export const TransactionCard= ({data}: CardProps) => {
+export const TransactionCard = ({data}: CardProps) => {
   return (
     <Container>
-      <Title>
-        {data.title}
-      </Title>
+      <Title>{data.title}</Title>
 
       <Amount type={data.type}>
         {data.type === 'outcome' && '- '}
@@ -42,16 +40,13 @@ export const TransactionCard= ({data}: CardProps) => {
 
       <Footer>
         <Category>
-          <Icon name={data.category.icon}/>
+          <Icon name={data.category.icon} />
 
-          <CategoryName>
-            {data.category.name}
-          </CategoryName>
+          <CategoryName>{data.category.name}</CategoryName>
         </Category>
 
         <Date>{data.date}</Date>
       </Footer>
     </Container>
   );
-}
-
+};

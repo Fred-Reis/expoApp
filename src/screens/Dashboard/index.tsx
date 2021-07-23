@@ -1,7 +1,10 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import { HighlightedCard } from '../../components/HighlightedCard';
-import { TransactionCard, TransactionCardProps } from '../../components/TransactionCard';
+import {TouchableOpacity} from 'react-native';
+import {HighlightedCard} from '../../components/HighlightedCard';
+import {
+  TransactionCard,
+  TransactionCardProps,
+} from '../../components/TransactionCard';
 
 import {
   Container,
@@ -16,7 +19,7 @@ import {
   HighlightedCards,
   Transactions,
   Title,
-  TransactionsList
+  TransactionsList,
 } from './styles';
 
 export interface DataListProps extends TransactionCardProps {
@@ -27,52 +30,56 @@ export const Dashboard = () => {
   const data: DataListProps[] = [
     {
       id: '1',
-      type:"income",
-      title:"Desenvolvimento de Site",
-      amount:"U$$ 12,000.00",
-      category:{
+      type: 'income',
+      title: 'Desenvolvimento de Site',
+      amount: 'U$$ 12,000.00',
+      category: {
         name: 'Sales',
-        icon: 'dollar-sign'
+        icon: 'dollar-sign',
       },
-      date:"2021/07/14"
+      date: '2021/07/14',
     },
     {
       id: '2',
-      type:'outcome',
-      title:"Hamburgueria",
-      amount:"U$$ 23.00",
-      category:{
+      type: 'outcome',
+      title: 'Hamburgueria',
+      amount: 'U$$ 23.00',
+      category: {
         name: 'Food',
-        icon: 'coffee'
+        icon: 'coffee',
       },
-      date:"2021/07/12"
+      date: '2021/07/12',
     },
     {
       id: '3',
-      type:'outcome',
-      title:"Apartment rental",
-      amount:"U$$ 400.00",
-      category:{
+      type: 'outcome',
+      title: 'Apartment rental',
+      amount: 'U$$ 400.00',
+      category: {
         name: 'House',
-        icon: 'shopping-bag'
+        icon: 'shopping-bag',
       },
-      date:"2021/07/10"
+      date: '2021/07/10',
     },
-  ]
+  ];
 
   return (
     <Container>
       <Header>
         <UserContainer>
           <UserInfo>
-            <Photo source={{uri: 'https://avatars.githubusercontent.com/u/52092659?v=4'}} />
+            <Photo
+              source={{
+                uri: 'https://avatars.githubusercontent.com/u/52092659?v=4',
+              }}
+            />
             <User>
               <UserGreeting>Olá,</UserGreeting>
               <UserName>Fred</UserName>
             </User>
           </UserInfo>
           <TouchableOpacity>
-            <Icon name="power"/>
+            <Icon name="power" />
           </TouchableOpacity>
         </UserContainer>
       </Header>
@@ -104,15 +111,9 @@ export const Dashboard = () => {
         <TransactionsList
           data={data}
           keyExtractor={item => item.id}
-          renderItem={({ item }) => (
-            <TransactionCard
-              data={item}
-          />
-          )}
+          renderItem={({item}) => <TransactionCard data={item} />}
         />
-
-
       </Transactions>
     </Container>
   );
-}
+};
