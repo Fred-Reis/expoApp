@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "baseUrl": "src",
+    "paths": {
+      "test-utils": ["./utils/testUtils"]
+    }
   },
   "extends": "expo/tsconfig.base"
 }
