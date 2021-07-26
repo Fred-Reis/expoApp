@@ -6,5 +6,5 @@ type InputProps = TextInputProps;
 import {Container} from './styles';
 
 export const Input = ({...rest}: InputProps) => {
-  return <Container {...rest} />;
+  return <Container {...rest} testID="text-input" />;
 };

@@ -5,7 +5,8 @@
     "listIosDevices": "xcrun simctl list devices",
     "ios": "react-native run-ios --udid 6BC691E5-87B1-4C8F-A17C-ADD89B9E0C61",
     "web": "expo start --web",
-    "start": "react-native start"
+    "start": "react-native start",
+    "test": "jest  --watch"
   },
   "dependencies": {
     "@expo-google-fonts/poppins": "^0.2.0",
@@ -31,11 +32,25 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@react-native-community/eslint-config": "^3.0.0",
+    "@testing-library/jest-native": "^4.0.1",
+    "@testing-library/react-native": "^7.2.0",
+    "@types/jest": "^26.0.24",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
     "@types/styled-components-react-native": "^5.1.1",
     "eslint": "^7.31.0",
+    "jest-expo": "^42.0.1",
+    "react-test-renderer": "^17.0.2",
     "typescript": "~4.0.0"
   },
-  "private": true
+  "private": true,
+  "jest": {
+    "preset": "jest-expo",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
+    ]
+  }
 }
