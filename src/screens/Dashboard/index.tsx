@@ -1,5 +1,4 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
 import {HighlightedCard} from '../../components/HighlightedCard';
 import {
   TransactionCard,
@@ -20,6 +19,7 @@ import {
   Transactions,
   Title,
   TransactionsList,
+  LogoutButton,
 } from './styles';
 
 export interface DataListProps extends TransactionCardProps {
@@ -78,9 +78,9 @@ export const Dashboard = () => {
               <UserName>Fred</UserName>
             </User>
           </UserInfo>
-          <TouchableOpacity>
+          <LogoutButton onPress={() => {}}>
             <Icon name="power" />
-          </TouchableOpacity>
+          </LogoutButton>
         </UserContainer>
       </Header>
 

@@ -45,8 +45,8 @@ export const CategorySelect = ({
           <Category
             isActive={category.key === item.key}
             onPress={() => handleCategorySelect(item)}>
-            <Icon name={item.icon} />
-            <Label>{item.name}</Label>
+            <Icon isActive={category.key === item.key} name={item.icon} />
+            <Label isActive={category.key === item.key}>{item.name}</Label>
           </Category>
         )}
         ItemSeparatorComponent={() => <Separator />}

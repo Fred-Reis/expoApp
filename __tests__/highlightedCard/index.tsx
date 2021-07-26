@@ -1,7 +1,7 @@
 import React from 'react';
 import {HighlightedCard} from '..';
 
-import {render} from '../../../utils/testUtils';
+import {render} from '../../../../__tests__/testUtils';
 
 test('Render correct data', () => {
   const {getByText} = render(

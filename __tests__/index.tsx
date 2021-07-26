@@ -1,7 +1,7 @@
 import React from 'react';
-import {CategorySelectButton} from '..';
+import {CategorySelectButton} from '../src/components/Form/CategorySelectButton';
 
-import {render} from '../../../../utils/testUtils';
+import {render} from './testUtils';
 
 test('Render correct category title', () => {
   const {getByText} = render(

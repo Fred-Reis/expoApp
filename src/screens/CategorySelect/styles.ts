@@ -37,14 +37,18 @@ export const Category = styled.TouchableOpacity<CategoryProps>`
     isActive ? theme.colors.secondary_light : theme.colors.background};
 `;
 
-export const Icon = styled(Feather)`
+export const Icon = styled(Feather)<CategoryProps>`
   font-size: ${RFValue(20)}px;
   margin-right: 10px;
+  color: ${({isActive, theme}) =>
+    isActive ? theme.colors.primary : theme.colors.text};
 `;
 
-export const Label = styled.Text`
+export const Label = styled.Text<CategoryProps>`
   font-family: ${({theme}) => theme.fonts.regular};
   font-size: ${RFValue(14)}px;
+  color: ${({isActive, theme}) =>
+    isActive ? theme.colors.primary : theme.colors.text};
 `;
 
 export const Separator = styled.View`

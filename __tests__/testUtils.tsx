@@ -1,7 +1,7 @@
 import React, {FC, ReactElement} from 'react';
 import {render, RenderOptions} from '@testing-library/react-native';
 import {ThemeProvider} from 'styled-components/native';
-import theme from '../global/styles/theme';
+import theme from '../src/global/styles/theme';
 
 const AllTheProviders: FC = ({children}) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
